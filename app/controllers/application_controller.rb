@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   get '/recipes/new' do #loads new form
       erb :new
     end
-  
+
   get '/recipes' do #loads index page
     @recipes = Recipe.all
     erb :index
@@ -42,5 +42,5 @@ class ApplicationController < Sinatra::Base
     @recipe = Recipe.find_by_id(params[:id])
     @recipe.delete
     redirect to '/recipes'
-  end  
+  end
 end
